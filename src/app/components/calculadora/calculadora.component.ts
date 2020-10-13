@@ -18,8 +18,13 @@ export class CalculadoraComponent implements OnInit {
   }
 
   insert(num) {
-    let current = this.input.value.substring();
-    this.input.setValue(current += num);
+    if(this.input.value) {
+      let current = this.input.value;
+      this.input.setValue(current += num);
+    } else {
+      this.input.setValue(num);
+    }
+
   }
 
   c() {
